@@ -1,4 +1,4 @@
-import { createElement } from '../render.js';
+import { createElement } from '../render.js'
 
 const createFilterTemplate = () => (
   `<nav class="main-navigation">
@@ -13,22 +13,22 @@ const createFilterTemplate = () => (
     <li><a href="#" class="sort__button">Sort by date</a></li>
     <li><a href="#" class="sort__button">Sort by rating</a></li>
   </ul>`
-);
+)
 
 export default class FilterView {
-  getTemplate() {
-    return createFilterTemplate();
+  getTemplate () {
+    return createFilterTemplate()
   }
 
-  getElement() {
+  getElement () {
     if (!this.element) {
-      this.element = createElement(this.getTemplate());
+      this.element = createElement(this.getTemplate())
     }
 
-    return this.element;
+    return this.element
   }
 
-  removeElement() {
-    this.element = null;
+  removeElement () {
+    this.element = null
   }
 }

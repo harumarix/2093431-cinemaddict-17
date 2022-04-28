@@ -2,33 +2,33 @@ const RenderPosition = {
   BEFOREBEGIN: 'beforebegin',
   AFTERBEGIN: 'afterbegin',
   BEFOREEND: 'beforeend',
-  AFTEREND: 'afterend',
-};
+  AFTEREND: 'afterend'
+}
 
 const createElement = (template) => {
-  const newElement = document.createElement('div');
-  newElement.innerHTML = template;
+  const newElement = document.createElement('div')
+  newElement.innerHTML = template
 
-  return newElement.firstElementChild;
-};
+  return newElement.firstElementChild
+}
 
 const render = (component, container, place = RenderPosition.BEFOREEND) => {
-  const element = component.getElement();
+  const element = component.getElement()
 
   switch (place) {
     case RenderPosition.BEFOREBEGIN:
-      container.before(element);
-      break;
+      container.before(element)
+      break
     case RenderPosition.AFTERBEGIN:
-      container.prepend(element);
-      break;
+      container.prepend(element)
+      break
     case RenderPosition.BEFOREEND:
-      container.append(element);
-      break;
+      container.append(element)
+      break
     case RenderPosition.AFTEREND:
-      container.after(element);
-      break;
+      container.after(element)
+      break
   }
-};
+}
 
-export {RenderPosition, createElement, render};
+export { RenderPosition, createElement, render }

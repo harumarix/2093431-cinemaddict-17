@@ -1,4 +1,4 @@
-import { createElement } from '../render.js';
+import { createElement } from '../render.js'
 
 const createFilterTemplate = () => (
     `<article class="film-card">
@@ -20,22 +20,22 @@ const createFilterTemplate = () => (
       <button class="film-card__controls-item film-card__controls-item--favorite" type="button">Mark as favorite</button>
     </div>
   </article>`
-);
+)
 
 export default class FilmCardView {
-    getTemplate() {
-        return createFilterTemplate();
+  getTemplate () {
+    return createFilterTemplate()
+  }
+
+  getElement () {
+    if (!this.element) {
+      this.element = createElement(this.getTemplate())
     }
 
-    getElement() {
-        if (!this.element) {
-            this.element = createElement(this.getTemplate());
-        }
+    return this.element
+  }
 
-        return this.element;
-    }
-
-    removeElement() {
-        this.element = null;
-    }
+  removeElement () {
+    this.element = null
+  }
 }
